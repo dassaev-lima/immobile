@@ -17,7 +17,7 @@
 
                 </div>
                 <div class="col-3">
-                    <a href="/novo-cliente/"><button type="button" class="btn btn-outline-info btn-block">Cadastrar Cliente</button></a>
+                    <a href="/clientes/novo/"><button type="button" class="btn btn-outline-info btn-block">Cadastrar Cliente</button></a>
                 </div>
             </div>
         </div>
@@ -29,6 +29,7 @@
                         <th scope="col">Cliente</th>
                         <th scope="col">Contato</th>
                         <th scope="col">Data que iniciou no app</th>
+                        <th>opção</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +42,16 @@
                         <td>{{ cliente.nome}}</td>
                         <td>{{ cliente.email }}</td>
                         <td>{{ cliente.get_data_entrada_br }}</td>
+                        <td>
+                            <a href="/clientes/delete/{{ cliente.id }}/">
+                                <i class="fa fa-trash" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
+                            </a>
+                        </td>
+                        <!--<td>
+                            <a href="/clientes/edit/{{ cliente.id }}/">
+                                <i class="fa fa-pencil" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
+                            </a>
+                        </td>-->
                     </tr>
                  {% endfor %}
                 </tbody>

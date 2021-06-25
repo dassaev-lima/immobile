@@ -23,7 +23,14 @@ def add_cliente(request):
                                cpf=cpf,
                                email=email,
                                telefone=telefone)
-    return redirect('/')
+    return redirect('clientes/')
+
+def delete_cliente(request,id_cliente):
+    if id_cliente:
+        cliente = Cliente.objects.get(id=id_cliente)
+        cliente.delete()
+    return redirect('/clientes/')
+
 def lista_clientes(request):
     lista_de_clientes = Cliente.objects.all()
     dados = {"clientes":lista_de_clientes}

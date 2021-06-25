@@ -23,6 +23,7 @@ urlpatterns = [
     path('',RedirectView.as_view(url='/imoveis/')),
     path('imoveis/',views.lista_imoveis),
     path('clientes/',views.lista_clientes),
-    path('novo-cliente/',views.novo_cliente),
-    path('add-cliente/',views.add_cliente)
+    path('clientes/delete/<int:id_cliente>/',views.delete_cliente),
+    path('clientes/novo/',views.novo_cliente),
+    path('clientes/add/',views.add_cliente)
 ]
