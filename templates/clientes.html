@@ -1,0 +1,51 @@
+{% extends "estrutura.html" %}
+    {% block content %}
+    <main class="pt-5">
+        <div class="container">
+            <div class=" row">
+                <div class="col-md-3">
+                    <h1>Gerenciar Clientes</h1>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" placeholder="Pesquisar" class="form-control">
+                </div>
+                <div class="col-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Filtar por mais recente</option>
+                        <option value="1">One</option>
+                    </select>
+
+                </div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-outline-success btn-block">Cadastrar Cliente</button>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">foto</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Contato</th>
+                        <th scope="col">Data que iniciou no app</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for cliente in clientes %}
+                    <tr>
+                        <td>
+                            <img src="https://image.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg"
+                             alt="" class="img-fluid" width="50px" height="50px" style="border:2px solid whitesmoke; border-radius:50%">
+                        </td>
+                        <td>{{ cliente.nome}}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td>{{ cliente.get_data_entrada_br }}</td>
+                    </tr>
+                 {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    {% endblock %}

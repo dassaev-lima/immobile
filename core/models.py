@@ -15,6 +15,10 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nome
 
+    def get_data_entrada_br(self):
+        #return self.data_entrada.strftime('%d/%m/%y %H:%M')
+        return self.data_entrada.strftime('%d/%m/%y')
+
 #Modelo de Corretor
 class Corretor(models.Model):
     nome = models.CharField(max_length=255)
