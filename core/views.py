@@ -9,7 +9,10 @@ def lista_imoveis(request):
     dados = {"imoveis":lista_de_imoveis}
     return render(request,'imoveis.html',dados)
 
-#view que lista os Clientes
+#Views para CRUD de Clientes
+def novo_cliente(request):
+    return  render(request,'novo-cliente.html')
+
 def lista_clientes(request):
     lista_de_clientes = Cliente.objects.all()
     dados = {"clientes":lista_de_clientes}

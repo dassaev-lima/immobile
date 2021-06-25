@@ -1,0 +1,40 @@
+{% extends "estrutura.html" %}
+    {% block content %}
+
+    <div class="container">
+        <div class="row pt-5 ">
+            <div class="col-6 pt-5">
+                <h1 class="text-center">Formulário de Cadastro</h1>
+                <form action="#" class="form-group">
+                    <div class="col-12">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome">
+                    </div>
+                    <div class="col-12">
+                        <label for="cpf">CPF</label>
+                        <input type="text" class="form-control" name="cpf">
+                    </div>
+                    <div class="col-12">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="col-12">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" name="telefone">
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" class="form-control btn btn-info" value="Cadastrar">
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+                <img src="https://image.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg" alt=""
+                    class="img-fluid text-center">
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}
