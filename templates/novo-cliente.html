@@ -3,9 +3,9 @@
 
     <div class="container">
         <div class="row pt-5 ">
-            <div class="col-6 pt-5">
+            <div class="col-6 pt-4">
                 <h1 class="text-center">Formulário de Cadastro</h1>
-                <form action="#" class="form-group">
+                <form action="/add-cliente/" method="post" class="form-group">{% csrf_token %}
                     <div class="col-12">
                         <label for="nome">Nome</label>
                         <input type="text" class="form-control" name="nome">
@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <label for="telefone">Telefone</label>
                         <input type="text" class="form-control" name="telefone">
-                    </div>
+                    </div><br>
                     <div class="col-12">
                         <input type="submit" class="form-control btn btn-info" value="Cadastrar">
                     </div>

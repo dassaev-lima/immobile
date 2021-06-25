@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',RedirectView.as_view(url='/imoveis/')),
     path('imoveis/',views.lista_imoveis),
     path('clientes/',views.lista_clientes),
-    path('novo-cliente/',views.novo_cliente)
+    path('novo-cliente/',views.novo_cliente),
+    path('add-cliente/',views.add_cliente)
 ]
