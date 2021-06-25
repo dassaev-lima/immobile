@@ -7,3 +7,5 @@ admin.site.register(Corretor)
 admin.site.register(Imovel)
 admin.site.register(Pagamento)
 admin.site.register(Venda)
+
+
