@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from core.models import Imovel,Cliente
+from core.models import Imovel,Cliente,Corretor,Pagamento,Venda
 
 # Create your views here.
 
@@ -51,3 +51,33 @@ def lista_clientes(request):
     dados = {"clientes":lista_de_clientes}
     return render(request,'clientes.html',dados)
 
+#Vendas
+def nova_venda(request):
+    clientes = Cliente.objects.all()
+    corretores = Corretor.objects.all()
+    imoveis = Imovel.objects.all()
+    pagamentos = Pagamento.objects.all()
+    dados = {
+        'clientes':clientes,
+        'corretores':corretores,
+        'imoveis':imoveis,
+        'pagamentos':pagamentos,
+
+    }
+    return render(request,'nova-venda.html',dados)
+
+def submit_venda(request):
+    if request.POST:
+        data = request.POST.get('data')
+        id_cliente = Cliente.objects.get(id=int(request.POST.get('id_cliente')))
+        id_corretor = Corretor.objects.get(id=int(request.POST.get('id_corretor')))
+        id_imovel = Imovel.objects.get(id=int(request.POST.get('id_imovel')))
+        id_pagamento = Pagamento.objects.get(id=int(request.POST.get('id_pagamento')))
+
+        Venda.objects.create(id_cliente = id_cliente,
+                     id_corretor = id_corretor,
+                     id_imovel = id_imovel,
+                     id_pagamento = id_pagamento
+                     )
+
+    return redirect ('/clientes/')

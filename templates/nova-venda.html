@@ -1,0 +1,73 @@
+{% extends "estrutura.html" %}
+    {% block content %}
+
+    <div class="container">
+        <div class="row pt-5 ">
+            <div class="col-6 pt-4">
+                <h1 class="mb-5">Registrar Nova Venda</h1>
+                <form action="/vendas/submit/" method="post" class="form-group">{% csrf_token %}
+                    <!--<div class="col-12">
+                        <label for="nome">Data da Venda</label>
+                        <input type="datetime-local" class="form-control" name="data">
+                    </div>-->
+                    <div class="form-row">
+                    <div class="col-6">
+                        <label for="">Cliente</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="id_cliente">
+                          <option selected>Selecione um cliente</option>
+                            {%for cliente in clientes %}
+                                <option value="{{cliente.id}}">{{cliente.nome}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Imóvel</label>
+                        <select class="form-select form-control" aria-label="Default select example"name="id_imovel">
+                          <option selected>Selecione um Imóvel</option>
+                            {%for imovel in imoveis %}
+                                <option value="{{imovel.id}}">{{imovel.descricao}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6 mt-4 mb-4">
+                        <label for="">Corretor</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="id_corretor">
+                          <option selected>Selecione um Corretor</option>
+                            {%for corretor in corretores %}
+                                <option value="{{corretor.id}}">{{corretor.nome}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6 mt-4 mb-4">
+                        <label for="">Data de venda</label>
+                        <input type="datetime-local" class="form-control" name="data">
+                    </div><br>
+                    <div class="col-12 mb-4">
+                        <label for="">Forma de pagamento</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="id_pagamento">
+                          <option selected>Selecione a forma de pagamento</option>
+                            {%for pagamento in pagamentos %}
+                                <option value="{{pagamento.id}}">{{pagamento.opcao}}</option>
+                            {% endfor %}
+                        </select>
+
+                    </div>
+                    <div class="col-6">
+                        <input type="button" class="form-control btn btn-secondary" value="Cancelar">
+                    </div>
+                    <div class="col-6">
+                        <input type="submit" class="form-control btn btn-info" value="Registrar">
+                    </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock %}
