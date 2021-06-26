@@ -4,26 +4,30 @@
     <div class="container">
         <div class="row pt-5 ">
             <div class="col-6 pt-4">
-                <h1 class="text-center">Formulário de Cadastro</h1>
+                <h1 class="text-center">Formulário de Edição</h1>
                 <form action="/clientes/submit/" method="post" class="form-group">{% csrf_token %}
                     <div class="col-12">
+                        <input type="hidden" value="{{cliente.id}}" name="id">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" value="{{cliente.nome}}">
                     </div>
                     <div class="col-12">
                         <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" name="cpf">
+                        <input type="text" class="form-control" name="cpf" value="{{cliente.cpf}}">
                     </div>
                     <div class="col-12">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email">
+                        <input type="text" class="form-control" name="email" value="{{cliente.email}}">
                     </div>
                     <div class="col-12">
                         <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" name="telefone">
+                        <input type="text" class="form-control" name="telefone" value="{{cliente.telefone}}">
                     </div><br>
-                    <div class="col-12">
-                        <input type="submit" class="form-control btn btn-info" value="Cadastrar">
+                    <div class="col-6">
+                        <button type="button" class="form-control btn btn-light" value="cancelar">
+                    </div>
+                    <div class="col-6">
+                        <input type="submit" class="form-control btn btn-info" value="Salvar">
                     </div>
 
                 </form>

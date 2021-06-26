@@ -29,7 +29,7 @@
                         <th scope="col">Cliente</th>
                         <th scope="col">Contato</th>
                         <th scope="col">Data que iniciou no app</th>
-                        <th>opção</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,15 +43,19 @@
                         <td>{{ cliente.email }}</td>
                         <td>{{ cliente.get_data_entrada_br }}</td>
                         <td>
-                            <a href="/clientes/delete/{{ cliente.id }}/">
+                            <div class="row">
+                                <div class="col-3">
+                                    <a href="/clientes/delete/{{ cliente.id }}/">
                                 <i class="fa fa-trash" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
                             </a>
-                        </td>
-                        <!--<td>
-                            <a href="/clientes/edit/{{ cliente.id }}/">
+                                </div>
+                                <div class="col-3">
+                                    <a href="/clientes/edit/{{ cliente.id }}/">
                                 <i class="fa fa-pencil" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
                             </a>
-                        </td>-->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                  {% endfor %}
                 </tbody>
