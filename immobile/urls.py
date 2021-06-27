@@ -31,6 +31,7 @@ urlpatterns = [
     path('vendas/submit/',views.submit_venda),
     path('vendas/',views.lista_vendas),
     path('vendas/delete/<int:id_venda>/',views.delete_venda),
+    path('vendas/extrato/<int:id_venda>/',views.extrato_venda),
     path('login/',views.login_user),
     path('login/submit',views.submit_login),
     path('logouŧ',views.logout_user)

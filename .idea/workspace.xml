@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9e0da759-309e-4127-b17f-c533312abceb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/imoveis.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/imoveis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/immobile/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/immobile/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estrutura.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estrutura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/extrato-venda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/extrato-venda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/vendas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vendas.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

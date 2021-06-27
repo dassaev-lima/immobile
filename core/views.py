@@ -98,7 +98,7 @@ def submit_venda(request):
                      id_pagamento = id_pagamento
                      )
 
-    return redirect ('/clientes/')
+    return redirect ('/vendas/')
 
 @login_required(login_url='/login/')
 def delete_venda(request,id_venda):
@@ -107,6 +107,13 @@ def delete_venda(request,id_venda):
         venda.delete()
     return redirect('/vendas/')
 
+@login_required(login_url='/login/')
+def extrato_venda(request,id_venda):
+    if id_venda:
+        venda = {
+            'venda': Venda.objects.get(id=id_venda)
+        }
+    return render(request,'extrato-venda.html',venda)
 
 
 #Login

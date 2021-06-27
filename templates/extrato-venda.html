@@ -1,44 +1,63 @@
 {% extends "estrutura.html" %}
     {% block content %}
         <div class="container pt-5">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">foto</th>
-                        <th scope="col">Cliente</th>
-                        <th scope="col">Contato</th>
-                        <th scope="col">Data que iniciou no app</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {%for cliente in clientes %}
-                    <tr>
-                        <td>
-                            <img src="https://image.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg"
-                             alt="" class="img-fluid" width="50px" height="50px" style="border:2px solid whitesmoke; border-radius:50%">
-                        </td>
-                        <td>{{ cliente.nome}}</td>
-                        <td>{{ cliente.email }}</td>
-                        <td>{{ cliente.get_data_entrada_br }}</td>
-                        <td>
-                            <div class="row">
-                                <div class="col-3">
-                                    <a href="/clientes/delete/{{ cliente.id }}/">
-                                <i class="fa fa-trash" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
-                            </a>
-                                </div>
-                                <div class="col-3">
-                                    <a href="/clientes/edit/{{ cliente.id }}/">
-                                <i class="fa fa-pencil" style="color:grey;background-color:whitesmoke; padding:5px;border-radius:5px"></i>
-                            </a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                 {% endfor %}
-                </tbody>
-            </table>
+            <div class="container row">
+                <div class="col-6">
+                <h1 >Extrato da Transação</h1>
+                    <div class="row mb-5 pb-2">
+                        <div class="col-6">
+                            <label for="">Forma de pagamento</label>
+                            <input type="text" value="{{venda.id_pagamento}}" class="form-control" disabled="disabled">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Valor da venda</label>
+                            <input type="text" value="{{venda.id_imovel.valor}}" class="form-control" disabled="disabled">
+                        </div>
+                    </div>
+                    <h1 >Descrição da Compra</h1>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Imóvel comprado</label>
+                            <input type="text" value="{{venda.id_imovel}}" class="form-control" disabled="disabled">
+                        </div>
+                        <div class="col-6">
+                            <label for="">Localidade</label>
+                            <input type="text" value="{{venda.id_imovel.endereco}}" class="form-control" disabled="disabled">
+                        </div>
+                        <div class="col-6 mt-4">
+                            <label for="">Data da venda</label>
+                            <input type="text" value="{{venda.data}}" class="form-control" disabled="disabled">
+                        </div>
+                        <div class="col-6 mt-4">
+                            <label for="">Outras informações</label>
+                            <input type="text" value="{{venda.id_imovel.informacoes}}" class="form-control" disabled="disabled">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-6">
+                <h1 >Dados Humanos</h1>
+                    <div class="row">
+                    <div class="col-5">
+                        <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="https://image.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Cliente: {{venda.id_cliente}}</h5>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-5">
+                        <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="https://image.freepik.com/free-vector/man-shows-gesture-great-idea_10045-637.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Corretor: {{venda.id_corretor}}</h5>
+                          </div>
+                        </div>
+                    </div>
+</div>
+                </div>
+            </div>
 
 
     {% endblock %}
