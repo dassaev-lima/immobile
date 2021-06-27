@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="row pt-5 ">
-            <div class="col-6 pt-4">
+            <div class="col-12 pt-4">
                 <h1 class="mb-5">Registrar Nova Venda</h1>
                 <form action="/vendas/submit/" method="post" class="form-group">{% csrf_token %}
                     <!--<div class="col-12">
@@ -11,7 +11,7 @@
                         <input type="datetime-local" class="form-control" name="data">
                     </div>-->
                     <div class="form-row">
-                    <div class="col-6">
+                        <div class="col-4">
                         <label for="">Cliente</label>
                         <select class="form-select form-control" aria-label="Default select example" name="id_cliente">
                           <option selected>Selecione um cliente</option>
@@ -20,16 +20,33 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <label for="">Imóvel</label>
-                        <select class="form-select form-control" aria-label="Default select example"name="id_imovel">
-                          <option selected>Selecione um Imóvel</option>
-                            {%for imovel in imoveis %}
-                                <option value="{{imovel.id}}">{{imovel.descricao}}</option>
-                            {% endfor %}
-                        </select>
+                        <input type="text" value="{{imovel.descricao}}" class="form-control" disabled="disabled">
+                        <input type="hidden" value="{{imovel.id}}" name="id_imovel" >
                     </div>
-                    <div class="col-6 mt-4 mb-4">
+                    <div class="col-4">
+                        <label for="">Endereço</label>
+                        <input type="text" value="{{imovel.endereco}}" disabled="disabled" class="form-control">
+                    </div>
+                    </div>
+                    <div class="form-row mt-4">
+                        <div class="col-4">
+                        <label for="">Valor do Imóvel</label>
+                        <input type="text" value="{{imovel.valor}}" disabled="disabled" class="form-control">
+                    </div>
+                     <div class="col-4">
+                        <label for="">Comissão do Corretor</label>
+                        <input type="text" value="{{imovel.comissao}} %" disabled="disabled" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label for="">Outras informações</label>
+                        <input type="text" value="{{imovel.informacoes}}" disabled="disabled" class="form-control">
+                    </div>
+                    </div>
+
+                    <div class="form-row mt-4">
+                        <div class="col-4  mb-4">
                         <label for="">Corretor</label>
                         <select class="form-select form-control" aria-label="Default select example" name="id_corretor">
                           <option selected>Selecione um Corretor</option>
@@ -38,11 +55,11 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-6 mt-4 mb-4">
+                    <div class="col-4  mb-4">
                         <label for="">Data de venda</label>
                         <input type="datetime-local" class="form-control" name="data">
                     </div><br>
-                    <div class="col-12 mb-4">
+                    <div class="col-4 ">
                         <label for="">Forma de pagamento</label>
                         <select class="form-select form-control" aria-label="Default select example" name="id_pagamento">
                           <option selected>Selecione a forma de pagamento</option>
@@ -52,13 +69,16 @@
                         </select>
 
                     </div>
-                    <div class="col-6">
+                    </div>
+                    <div class="form-row">
+                         <div class="col-4">
                         <input type="button" class="form-control btn btn-secondary" value="Cancelar">
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <input type="submit" class="form-control btn btn-info" value="Registrar">
                     </div>
                     </div>
+
 
                 </form>
             </div>

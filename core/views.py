@@ -52,17 +52,23 @@ def lista_clientes(request):
     return render(request,'clientes.html',dados)
 
 #Vendas
-def nova_venda(request):
+def lista_vendas(request):
+    lista_de_vendas = Venda.objects.all()
+    vendas = {
+        'vendas':lista_de_vendas
+    }
+    return render(request, 'vendas.html', vendas)
+
+def nova_venda(request,id_imovel):
     clientes = Cliente.objects.all()
     corretores = Corretor.objects.all()
-    imoveis = Imovel.objects.all()
+    imovel = Imovel.objects.get(id=id_imovel)
     pagamentos = Pagamento.objects.all()
     dados = {
         'clientes':clientes,
         'corretores':corretores,
-        'imoveis':imoveis,
-        'pagamentos':pagamentos,
-
+        'imovel':imovel,
+        'pagamentos':pagamentos
     }
     return render(request,'nova-venda.html',dados)
 

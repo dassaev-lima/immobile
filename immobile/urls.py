@@ -27,6 +27,7 @@ urlpatterns = [
     path('clientes/novo/',views.novo_cliente),
     path('clientes/edit/<int:id_cliente>/',views.edit_cliente),
     path('clientes/submit/',views.submit_cliente),
-    path('vendas/nova/',views.nova_venda),
-    path('vendas/submit/',views.submit_venda)
+    path('vendas/nova/<int:id_imovel>/',views.nova_venda),
+    path('vendas/submit/',views.submit_venda),
+    path('vendas/',views.lista_vendas)
 ]
