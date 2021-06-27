@@ -10,14 +10,14 @@
                     <input type="text" placeholder="Pesquisar" class="form-control">
                 </div>
                 <div class="col-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <!--<select class="form-select" aria-label="Default select example">
                         <option selected>Filtar por mais recente</option>
                         <option value="1">One</option>
-                    </select>
+                    </select>-->
 
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-outline-success btn-block">Cadastrar Imóvel</button>
+                    <button type="button" class="btn btn-outline-info btn-block">Cadastrar Imóvel</button>
                 </div>
             </div>
         </div>
@@ -25,21 +25,28 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th scope="col">Imagem</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Valor</th>
-                        <th scope="col"></th>
+                        <th scope="col">Vender</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for imovel in imoveis %}
                     <tr>
+                        <td>
+                            <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_960_720.jpg"
+                             alt="" class="img-fluid" width="50px" height="50px" style="border:2px solid whitesmoke;">
+                        </td>
                         <td>{{imovel.descricao}}</td>
                         <td>{{imovel.tipo}}</td>
                         <td>{{imovel.valor}}</td>
                         <td>
-                            <i class="fas fa-ellipsis-h" style="background-color:whitesmoke;padding:5px;
-                            border-radius:5px;color:grey"></i>
+                            <a href="/vendas/nova/{{imovel.id}}/">
+                                <i class="fas fa-store" style="background-color:whitesmoke;padding:5px;
+                                border-radius:5px;color:grey"></i>
+                            </a>
                         </td>
                     </tr>
                 {% endfor %}
