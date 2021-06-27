@@ -100,7 +100,16 @@ def submit_venda(request):
 
     return redirect ('/clientes/')
 
+@login_required(login_url='/login/')
+def delete_venda(request,id_venda):
+    if id_venda:
+        venda = Venda.objects.get(id=id_venda)
+        venda.delete()
+    return redirect('/vendas/')
 
+
+
+#Login
 def login_user(request):
     return render(request,'login.html')
 
