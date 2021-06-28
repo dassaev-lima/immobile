@@ -10,7 +10,7 @@
         <img
             src="https://img.shields.io/static/v1?label=Frontend&message=Bootstrap&color=1ca7e1&style=for-the-badge&logo=ghost" />
         <img
-            src="https://img.shields.io/static/v1?label=DataBase&message=Mysql&color=1ca7e1&style=for-the-badge&logo=ghost" />
+            src="https://img.shields.io/static/v1?label=DataBase&message=Sqlite3&color=1ca7e1&style=for-the-badge&logo=ghost" />
     </div>
     <h4 align="center">
         🚧 Projeto-Django 🚀 Em construção... 🚧
