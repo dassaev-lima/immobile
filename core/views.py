@@ -13,7 +13,7 @@ def lista_imoveis(request):
     dados = {"imoveis":lista_de_imoveis}
     return render(request,'imoveis.html',dados)
 
-#Views para CRUD de Clientes
+#Views relacionadas aos Clientes
 @login_required(login_url='/login/')
 def novo_cliente(request):
     return render(request,'novo-cliente.html')
@@ -60,7 +60,7 @@ def lista_clientes(request):
     dados = {"clientes":lista_de_clientes}
     return render(request,'clientes.html',dados)
 
-#Vendas
+#Views relacionadas às vendas
 @login_required(login_url='/login/')
 def lista_vendas(request):
     lista_de_vendas = Venda.objects.all()
@@ -116,7 +116,7 @@ def extrato_venda(request,id_venda):
     return render(request,'extrato-venda.html',venda)
 
 
-#Login
+#Views relacionadas ao login
 def login_user(request):
     return render(request,'login.html')
 
@@ -129,7 +129,7 @@ def submit_login(request):
             login(request,usuario)
         else:
             messages.error(request,'Usuário ou senha inválidos')
-    return redirect('/')
+    return redirect('/imoveis/')
 
 def logout_user(request):
     logout(request)
