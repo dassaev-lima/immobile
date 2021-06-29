@@ -29,6 +29,7 @@
                         <th scope="col">Descrição</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Valor</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Vender</th>
                     </tr>
                 </thead>
@@ -41,12 +42,15 @@
                         </td>
                         <td>{{imovel.descricao}}</td>
                         <td>{{imovel.tipo}}</td>
-                        <td>{{imovel.valor}}</td>
+                        <td>R$ {{imovel.valor}}</td>
+                        <td>{{imovel.status}}</td>
                         <td>
+                            {% if imovel.status == 'à venda'%}
                             <a href="/vendas/nova/{{imovel.id}}/">
                                 <i class="fas fa-store" style="background-color:whitesmoke;padding:5px;
                                 border-radius:5px;color:grey"></i>
                             </a>
+                            {% endif %}
                         </td>
                     </tr>
                 {% endfor %}

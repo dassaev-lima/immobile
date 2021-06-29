@@ -1,7 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Icone do site -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://user-images.githubusercontent.com/48656494/123637435-661b7680-d7f4-11eb-9d00-36b9a02dcd2e.png">
+<!-- Icone do site -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://user-images.githubusercontent.com/48656494/123637435-661b7680-d7f4-11eb-9d00-36b9a02dcd2e.png">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<title>Immobile</title>
+</head>
 <style>
 
 /* BASIC */
@@ -278,9 +285,9 @@ input[type=text]:placeholder {
     </div>
 
     <!-- Login Form -->
-    <form action="submit" method="post">{% csrf_token %}
-      <input type="text" id="usuario" class="fadeIn second text-left" name="username" placeholder="login">
-      <input type="text" id="senha" class="fadeIn third text-left" name="password" placeholder="password">
+    <form action="submit" method="post" class="form-group">{% csrf_token %}
+      <input type="text" id="usuario" class="form-control second text-left" name="username" placeholder="login" required="required">
+      <input type="text" id="senha" class="form-control third text-left" name="password" placeholder="password" required="required">
       <input type="submit" class="fadeIn fourth" value="Entrar">
     </form>
 
@@ -291,4 +298,8 @@ input[type=text]:placeholder {
 
   </div>
 </div>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
     </boby>
+</html>

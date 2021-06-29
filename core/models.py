@@ -39,6 +39,7 @@ class Imovel(models.Model):
     comissao = models.IntegerField(default=5)
     descricao = models.CharField(max_length=255)
     informacoes = models.TextField(blank=True,null=True)
+    status = models.CharField(max_length=255,default='à venda')
 
     class Meta:
         db_table = 'imovel'
@@ -56,15 +57,18 @@ class Pagamento(models.Model):
     def __str__(self):
         return self.opcao
 
-# Modelo de Pagamento
+# Modelo de venda
 class Venda(models.Model):
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     id_corretor = models.ForeignKey(Corretor, on_delete=models.CASCADE)
     id_imovel = models.ForeignKey(Imovel, on_delete=models.CASCADE)
     id_pagamento = models.ForeignKey(Pagamento, on_delete=models.CASCADE)
-    data = models.DateTimeField(auto_now=True)
+    data = models.DateTimeField()
 
     class Meta:
         db_table = 'venda'
+
+    def get_data_venda_br(self):
+        return self.data.strftime('%d/%m/%y')
 
 

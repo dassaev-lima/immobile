@@ -10,10 +10,10 @@
                     <input type="text" placeholder="Pesquisar" class="form-control">
                 </div>
                 <div class="col-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <!--<select class="form-select" aria-label="Default select example">
                         <option selected>Filtar por mais recente</option>
                         <option value="1">One</option>
-                    </select>
+                    </select>-->
 
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{ venda.id_cliente.nome}}</td>
                         <td>{{ venda.id_imovel.descricao}}</td>
-                        <td>{{ venda.id_imovel.valor}}</td>
+                        <td>R$ {{ venda.id_imovel.valor}}</td>
                         <td>{{ venda.id_corretor.nome}}</td>
                         <td>{{ venda.id_pagamento.opcao}}</td>
                         <td>

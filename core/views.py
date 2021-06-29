@@ -86,17 +86,21 @@ def nova_venda(request,id_imovel):
 @login_required(login_url='/login/')
 def submit_venda(request):
     if request.POST:
-        data = request.POST.get('data')
+        data_da_venda = request.POST.get('data')
         id_cliente = Cliente.objects.get(id=int(request.POST.get('id_cliente')))
         id_corretor = Corretor.objects.get(id=int(request.POST.get('id_corretor')))
         id_imovel = Imovel.objects.get(id=int(request.POST.get('id_imovel')))
         id_pagamento = Pagamento.objects.get(id=int(request.POST.get('id_pagamento')))
 
-        Venda.objects.create(id_cliente = id_cliente,
-                     id_corretor = id_corretor,
-                     id_imovel = id_imovel,
-                     id_pagamento = id_pagamento
-                     )
+        imovel = Imovel.objects.get(id=id_imovel.id)
+        if imovel.status != 'vendido':
+            Venda.objects.create(id_cliente = id_cliente,
+                         id_corretor = id_corretor,
+                         id_imovel = id_imovel,
+                         id_pagamento = id_pagamento,
+                         data=data_da_venda)
+            imovel.status = 'vendido'
+            imovel.save()
 
     return redirect ('/vendas/')
 
@@ -104,7 +108,11 @@ def submit_venda(request):
 def delete_venda(request,id_venda):
     if id_venda:
         venda = Venda.objects.get(id=id_venda)
+        imovel = Imovel.objects.get(id=venda.id_imovel.id)
+        imovel.status = 'à venda'
+        imovel.save()
         venda.delete()
+
     return redirect('/vendas/')
 
 @login_required(login_url='/login/')

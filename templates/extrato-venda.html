@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-6">
                             <label for="">Valor da venda</label>
-                            <input type="text" value="{{venda.id_imovel.valor}}" class="form-control" disabled="disabled">
+                            <input type="text" value="R$ {{venda.id_imovel.valor}}" class="form-control" disabled="disabled">
                         </div>
                     </div>
                     <h1 >Descrição da Compra</h1>
@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-6 mt-4">
                             <label for="">Data da venda</label>
-                            <input type="text" value="{{venda.data}}" class="form-control" disabled="disabled">
+                            <input type="text" value="{{venda.get_data_venda_br}}" class="form-control" disabled="disabled">
                         </div>
                         <div class="col-6 mt-4">
                             <label for="">Outras informações</label>
@@ -58,6 +58,7 @@
 </div>
                 </div>
             </div>
+        </div>
 
 
     {% endblock %}

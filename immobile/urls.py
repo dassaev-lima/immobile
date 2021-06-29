@@ -19,17 +19,26 @@ from core import views
 from django.views.generic import RedirectView
 
 urlpatterns = [
+    #rota padrão para acesso do admin django
     path('admin/', admin.site.urls),
+
+    #rotas padrão para acesso ao dashboardo do sistema
     path('',RedirectView.as_view(url='/imoveis/')),
     path('login/',views.login_user),
     path('login/submit',views.submit_login),
     path('logout',views.logout_user),
+
+    #rota padrão para acesso aos imóveis do sistema
     path('imoveis/',views.lista_imoveis),
+
+    #rota padrão para acesso aos clientes do sistema
     path('clientes/',views.lista_clientes),
     path('clientes/delete/<int:id_cliente>/',views.delete_cliente),
     path('clientes/novo/',views.novo_cliente),
     path('clientes/edit/<int:id_cliente>/',views.edit_cliente),
     path('clientes/submit/',views.submit_cliente),
+
+    #rota padrão para acesso às vendas do sistema
     path('vendas/nova/<int:id_imovel>/',views.nova_venda),
     path('vendas/submit/',views.submit_venda),
     path('vendas/',views.lista_vendas),
