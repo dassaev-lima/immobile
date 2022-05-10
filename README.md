@@ -25,7 +25,7 @@
 ### Configurar requisitos no linux ubuntu
 - Python3: ```sudo apt-get install python3```
 - PIP3: ```sudo apt-get install python3-pip```
-- Flask: ```pip3 install django```
+- Django: ```pip3 install django```
 - Clonar o repositório: ```git clone https://github.com/dassaev-lima/immobile.git```
 
 ### Como executar
