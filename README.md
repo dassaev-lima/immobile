@@ -32,7 +32,3 @@
 - Acesse o diretório da aplicação via terminal e execute o seguinte comando.
 
 ```python3 manage.py runserver```
-
-### Licença
-  MIT License © Dassaev Lima
-
